@@ -3,8 +3,9 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    [SerializeField]
     public City city;
+
+    public World world;
 
     [SerializeField]
     private ResourceDatabase resourceDatabase;
@@ -20,7 +21,8 @@ public class GameManager : MonoBehaviour
     private float tickDuration = 4f;
     void Awake()
     {
-        city = new City("Ma première ville",resourceDatabase);
+        world = new World(20, 20);
+        city = new City("Ma première ville", resourceDatabase);
         time = new TimeManager();
 
     }
@@ -34,7 +36,7 @@ public class GameManager : MonoBehaviour
         {
             city.Tick();
             time.Tick();
-            timer = 0f; 
+            timer = 0f;
         }
     }
 
@@ -53,6 +55,7 @@ public class GameManager : MonoBehaviour
         SaveGame save = new SaveGame();
         save.City = city.CreateSave();
         save.Year = time.Year;
+        save.World = world.CreateSave();
         save.LastSaveDate = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
         return save;
     }
@@ -61,5 +64,6 @@ public class GameManager : MonoBehaviour
     {
         city = City.FromSave(save.City, resourceDatabase, buildingDatabase);
         time.Load(save.Year);
+        world = World.FromSave(save.World);
     }
 }

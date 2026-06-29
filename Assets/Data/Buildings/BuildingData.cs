@@ -17,4 +17,8 @@ public class BuildingData : ScriptableObject
 
     [Header("Construction Costs")]
     public List<ResourceCost> ConstructionCosts = new();
+
+    [Header("Dimensions")]  
+    public int Width = 1;
+    public int Height = 1;
 }

@@ -164,7 +164,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0726855703000274bb7a23564211c289, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  resourceDatabase: {fileID: 0}
+  resourceDatabase: {fileID: 11400000, guid: 8b06d84510bafb1439e2b0f981977617, type: 2}
+  buildingDatabase: {fileID: 11400000, guid: b0751c39df6afba4395bbdd75f9304ee, type: 2}
 --- !u!114 &305550341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,6 +178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd3fea38b18dd294098edc29922b223f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SaveManager
+  gameManager: {fileID: 1278046923}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,13 +265,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 10, y: 20, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &330585547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -660,6 +662,11 @@ MonoBehaviour:
   houseData: {fileID: 11400000, guid: 43b73ae1d0d54d74c88b31a04b4a815f, type: 2}
   stoneMineData: {fileID: 11400000, guid: df5beb39ed34a774f941b16e44b5ab57, type: 2}
   woodHouseData: {fileID: 11400000, guid: b69d2315f8eee544dbcc11595f507c78, type: 2}
+  citySave:
+    Name: 
+    Population: 0
+    Resources: []
+    Buildings: []
 --- !u!4 &1048142860
 Transform:
   m_ObjectHideFlags: 0
@@ -751,6 +758,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   resourceDatabase: {fileID: 11400000, guid: 8b06d84510bafb1439e2b0f981977617, type: 2}
+  buildingDatabase: {fileID: 11400000, guid: b0751c39df6afba4395bbdd75f9304ee, type: 2}
 --- !u!4 &1278046924
 Transform:
   m_ObjectHideFlags: 0
@@ -1045,8 +1053,55 @@ Transform:
   - {fileID: 1278046924}
   - {fileID: 1109481483}
   - {fileID: 305550339}
+  - {fileID: 1978042127}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1978042126
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1978042127}
+  - component: {fileID: 1978042128}
+  m_Layer: 0
+  m_Name: WorldRenderer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1978042127
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1978042126}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1975409632}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1978042128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1978042126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34659c32d5fb80b4297fac2a683e8e42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WorldRenderer
+  gameManager: {fileID: 1278046923}
+  tilePrefab: {fileID: 4609103299282063890, guid: 668c6cd27e287344cbb3a20e845c3a7e, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
