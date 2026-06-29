@@ -15,7 +15,10 @@ MonoBehaviour:
   Id: farm
   BuildingName: Ferme
   Icon: {fileID: 0}
-  Productions: []
+  Productions:
+  - Resource: {fileID: 11400000, guid: 7d7cd5ff38baa924180e089d0a718cca, type: 2}
+    Amount: 20
+    Chance: 100
   HousingCapacity: 0
   ConstructionCosts:
   - Resource: {fileID: 11400000, guid: 4e6af340c4bae984082442b5ff8f1f04, type: 2}

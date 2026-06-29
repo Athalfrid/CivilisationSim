@@ -15,7 +15,13 @@ MonoBehaviour:
   Id: bucheron
   BuildingName: "Cabane de b\xFBcheron"
   Icon: {fileID: 0}
-  Productions: []
+  Productions:
+  - Resource: {fileID: 11400000, guid: 4e6af340c4bae984082442b5ff8f1f04, type: 2}
+    Amount: 10
+    Chance: 100
+  - Resource: {fileID: 11400000, guid: 7d7cd5ff38baa924180e089d0a718cca, type: 2}
+    Amount: 5
+    Chance: 25
   HousingCapacity: 0
   ConstructionCosts:
   - Resource: {fileID: 11400000, guid: 0e28b8689ae63b44aa72db812f580f49, type: 2}

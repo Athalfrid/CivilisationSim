@@ -15,7 +15,16 @@ MonoBehaviour:
   Id: stoneMine
   BuildingName: Mine de pierre
   Icon: {fileID: 0}
-  Productions: []
+  Productions:
+  - Resource: {fileID: 11400000, guid: 7476dc2867585364fa93fb3ec8224ee1, type: 2}
+    Amount: 20
+    Chance: 100
+  - Resource: {fileID: 11400000, guid: ee70538da6297044e9f5f576b549a48b, type: 2}
+    Amount: 5
+    Chance: 20
+  - Resource: {fileID: 11400000, guid: 0e28b8689ae63b44aa72db812f580f49, type: 2}
+    Amount: 1
+    Chance: 5
   HousingCapacity: 0
   ConstructionCosts:
   - Resource: {fileID: 11400000, guid: 4e6af340c4bae984082442b5ff8f1f04, type: 2}
