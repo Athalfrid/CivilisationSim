@@ -27,7 +27,7 @@ Le projet s'inspire notamment de Caesar III, Banished, Anno, Age of Empires et E
 - [x] Ressources génériques
 - [x] Construction générique
 - [x] Interface utilisateur dynamique
-- [ ] Sauvegarde
+- [x] Sauvegarde
 - [ ] Carte jouable
 
 ### Alpha
