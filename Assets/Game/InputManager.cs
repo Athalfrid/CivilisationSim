@@ -58,7 +58,12 @@ public class InputManager : MonoBehaviour
 
         if (Keyboard.current.f9Key.wasPressedThisFrame)
         {
-            saveManager.Save();
+            saveManager.Save("save.json");
+        }
+
+        if (Keyboard.current.f10Key.wasPressedThisFrame)
+        {
+            saveManager.Load();
         }
     }
 

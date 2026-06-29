@@ -13,4 +13,9 @@ public class TimeManager
     {
         Year++;
     }
+
+    public void Load(int year)
+    {
+        Year = year;
+    }
 }

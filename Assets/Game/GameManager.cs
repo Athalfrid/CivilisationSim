@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private ResourceDatabase resourceDatabase;
     public ResourceDatabase ResourceDatabase => resourceDatabase;
+    [SerializeField]
+    private BuildingDatabase buildingDatabase;
+    public BuildingDatabase BuildingDatabase => buildingDatabase;
     private TimeManager time;
 
     private float timer = 0f;
@@ -38,5 +41,25 @@ public class GameManager : MonoBehaviour
     public int GetYear()
     {
         return time.Year;
+    }
+
+    public void LoadTime(int year)
+    {
+        time.Load(year);
+    }
+
+    public SaveGame CreateSave()
+    {
+        SaveGame save = new SaveGame();
+        save.City = city.CreateSave();
+        save.Year = time.Year;
+        save.LastSaveDate = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+        return save;
+    }
+
+    public void LoadGame(SaveGame save)
+    {
+        city = City.FromSave(save.City, resourceDatabase, buildingDatabase);
+        time.Load(save.Year);
     }
 }
