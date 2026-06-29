@@ -53,8 +53,9 @@ Construire une première ville sur une carte.
 
 ### Simulation
 
-* [ ] Sauvegarde
-* [ ] Chargement
+* [ ] Architecture de sauvegarde
+* [ ] Implémantation de la sauvegarde
+* [ ] Chargement de la sauvegarde
 * [ ] Carte
 * [ ] Placement des bâtiments
 

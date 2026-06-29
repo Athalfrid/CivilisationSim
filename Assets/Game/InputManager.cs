@@ -11,7 +11,7 @@ public class InputManager : MonoBehaviour
 
     [SerializeField]
     private BuildingData farmData;
-    
+
     [SerializeField]
     private BuildingData houseData;
 
@@ -20,6 +20,9 @@ public class InputManager : MonoBehaviour
 
     [SerializeField]
     private BuildingData woodHouseData;
+
+    [SerializeField]
+    private CitySave citySave;
 
 
     void Awake()
@@ -63,10 +66,10 @@ public class InputManager : MonoBehaviour
 
     void Build(BuildingData buildingData)
     {
-        
+
         if (gameManager.city.Build(buildingData))
         {
-            Debug.Log(buildingData.BuildingName+" construit !");
+            Debug.Log(buildingData.BuildingName + " construit !");
         }
         else
         {
@@ -75,5 +78,5 @@ public class InputManager : MonoBehaviour
     }
 
 
-    
+
 }

@@ -12,7 +12,7 @@ public class City
     public List<CityResource> Resources = new List<CityResource>();
     private ResourceDatabase resourceDatabase;
 
-    
+
     public List<Building> Buildings = new List<Building>();
 
     public City(string name, ResourceDatabase resourceDatabase)
@@ -32,6 +32,10 @@ public class City
         AddResource(resourceDatabase.GetResource(ResourceIds.Stone), 200);
         AddResource(resourceDatabase.GetResource(ResourceIds.Iron), 200);
         AddResource(resourceDatabase.GetResource(ResourceIds.Gold), 200);
+    }
+    private City()
+    {
+
     }
 
     public CityResource GetResource(ResourceData resourceData)
@@ -82,7 +86,7 @@ public class City
         }
 
 
-        CityResource food = GetResource(resourceDatabase.GetResource("food"));
+        CityResource food = GetResource(resourceDatabase.GetResource(ResourceIds.Food));
 
         if (food != null)
         {
@@ -140,5 +144,51 @@ public class City
         Buildings.Add(new Building(buildingData));
 
         return true;
+    }
+
+    public CitySave CreateSave()
+    {
+        CitySave save = new CitySave();
+        save.Name = Name;
+        save.Population = Population;
+
+        foreach (CityResource resource in Resources)
+        {
+            CityResourceSave resourceSave = new CityResourceSave();
+            resourceSave.ResourceId = resource.Data.Id;
+            resourceSave.Amount = resource.Amount;
+            save.Resources.Add(resourceSave);
+        }
+
+        foreach (Building building in Buildings)
+        {
+            BuildingSave buildingSave = new BuildingSave();
+            buildingSave.BuildingId = building.Data.Id;
+            save.Buildings.Add(buildingSave);
+        }
+        return save;
+    }
+
+    public static City FromSave(CitySave save, ResourceDatabase resourceDatabase, BuildingDatabase buildingDatabase)
+    {
+        City city = new City();
+        city.Name = save.Name;
+        city.Population = save.Population;
+        city.resourceDatabase = resourceDatabase;
+
+        foreach (CityResourceSave resourceSave in save.Resources)
+        {
+            ResourceData data = resourceDatabase.GetResource(resourceSave.ResourceId);
+            CityResource resource = new CityResource(data, resourceSave.Amount);
+            city.Resources.Add(resource);
+        }
+
+        foreach (BuildingSave buildingSave in save.Buildings)
+        {
+            Building building = new Building(buildingDatabase.GetBuilding(buildingSave.BuildingId));
+            city.Buildings.Add(building);
+        }
+
+        return city;
     }
 }

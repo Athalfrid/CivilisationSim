@@ -1,14 +1,18 @@
 using UnityEngine;
+using System.IO;
 
 public class SaveManager : MonoBehaviour
 {
     private float autoSaveTimer = 0f;
     private float autoSaveInterval = 120f;
 
+    [SerializeField]
+    private GameManager gameManager;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -16,7 +20,7 @@ public class SaveManager : MonoBehaviour
     {
         autoSaveTimer += Time.deltaTime;
 
-        if(autoSaveTimer >= autoSaveInterval)
+        if (autoSaveTimer >= autoSaveInterval)
         {
             autoSaveTimer = 0f;
             AutoSave();
@@ -25,7 +29,12 @@ public class SaveManager : MonoBehaviour
 
     public void Save()
     {
-        Debug.Log("Sauvegarde du jeu...");
+
+        CitySave save = gameManager.city.CreateSave();
+        string json = JsonUtility.ToJson(save, true);
+        string savePath = Path.Combine(Application.persistentDataPath,"save.json");
+        Debug.Log("City Save JSON path: " + savePath);
+        File.WriteAllText(savePath, json);
     }
 
     private void AutoSave()
