@@ -2,128 +2,137 @@
 
 ## Vision
 
-Créer un city-builder entièrement data-driven permettant de faire évoluer une civilisation de la Préhistoire jusqu'au Futur.
+Créer un city-builder entièrement **data-driven** permettant au joueur de développer une civilisation de la **Préhistoire jusqu'au Futur**.
 
-Le projet est développé de manière incrémentale. Chaque version apporte un ensemble cohérent de fonctionnalités et constitue une étape importante dans la construction du moteur.
+L'objectif est de construire un moteur de simulation modulaire, facilement extensible et capable d'accueillir de nouvelles ressources, bâtiments, technologies et mécaniques de jeu sans modifier le cœur de l'application.
 
 ---
 
-# v0.1.0 - Fondations du moteur ✅
+# Versions
 
-Objectif :
-Créer un moteur de simulation entièrement data-driven.
+## v0.1.0 — Fondations du moteur ✅
+
+### Objectif
+
+Mettre en place les fondations techniques du projet.
 
 ### Simulation
 
-- [x] Gestion du temps
-- [x] Ville
-- [x] Ressources génériques
-- [x] Productions génériques
-- [x] Construction générique
+* [x] Gestion du temps
+* [x] Gestion de la ville
+* [x] Ressources génériques
+* [x] Productions génériques
+* [x] Construction générique
 
 ### Architecture
 
-- [x] ScriptableObjects
-- [x] BuildingData
-- [x] ResourceData
-- [x] ResourceDatabase
-- [x] ProductionData
-- [x] ResourceCost
+* [x] ScriptableObjects
+* [x] BuildingData
+* [x] ResourceData
+* [x] ResourceDatabase
+* [x] ProductionData
+* [x] ResourceCost
 
 ### Interface
 
-- [x] UI dynamique
-- [x] Input System
+* [x] Interface utilisateur dynamique
+* [x] Input System
 
 ### Projet
 
-- [x] Git
-- [x] Documentation
+* [x] Dépôt Git
+* [x] Documentation initiale
 
 ---
 
-# v0.2.0 - Première simulation jouable
+## v0.2.0 — Première simulation jouable
 
-Objectif :
-Pouvoir construire une petite ville fonctionnelle.
+### Objectif
+
+Construire une première ville sur une carte.
 
 ### Simulation
 
-- [ ] Sauvegarde
-- [ ] Chargement
-- [ ] Carte
-- [ ] Placement des bâtiments
+* [ ] Sauvegarde
+* [ ] Chargement
+* [ ] Carte
+* [ ] Placement des bâtiments
 
 ### Interface
 
-- [ ] Sélection des bâtiments
-- [ ] Barre de construction
-- [ ] HUD
+* [ ] Barre de construction
+* [ ] Sélection des bâtiments
+* [ ] Informations sur les bâtiments
 
 ---
 
-# v0.3.0 - Première ville
+## v0.3.0 — Première ville autonome
 
-Objectif :
-Créer une ville autonome.
+### Objectif
+
+Permettre à une ville de fonctionner sans intervention permanente du joueur.
 
 ### Population
 
-- [ ] Citoyens
-- [ ] Logements
-- [ ] Besoins
+* [ ] Citoyens
+* [ ] Logements
+* [ ] Besoins
 
 ### Économie
 
-- [ ] Entrepôts
-- [ ] Transport
-- [ ] Routes
+* [ ] Entrepôts
+* [ ] Routes
+* [ ] Transport des ressources
 
 ---
 
-# v0.4.0 - Économie
+## v0.4.0 — Économie avancée
 
-Objectif :
-Mettre en place une véritable chaîne de production.
+### Objectif
 
-- [ ] Commerce
-- [ ] Marchés
-- [ ] Ressources avancées
-- [ ] Import / Export
+Créer une véritable chaîne de production.
 
----
-
-# v0.5.0 - Civilisation
-
-Objectif :
-Faire évoluer la ville au fil des âges.
-
-- [ ] Technologies
-- [ ] Époques
-- [ ] Recherche
-- [ ] Culture
+* [ ] Commerce
+* [ ] Marchés
+* [ ] Import / Export
+* [ ] Ressources avancées
 
 ---
 
-# v0.6.0 - Monde vivant
+## v0.5.0 — Civilisation
 
-Objectif :
+### Objectif
+
+Faire évoluer la civilisation à travers les âges.
+
+* [ ] Technologies
+* [ ] Époques historiques
+* [ ] Recherche
+* [ ] Culture
+
+---
+
+## v0.6.0 — Monde vivant
+
+### Objectif
+
 Créer un environnement dynamique.
 
-- [ ] IA
-- [ ] Diplomatie
-- [ ] Guerres
-- [ ] Catastrophes naturelles
-- [ ] Climat
+* [ ] IA
+* [ ] Diplomatie
+* [ ] Armées
+* [ ] Catastrophes naturelles
+* [ ] Climat
 
 ---
 
-# v1.0.0 - Première version jouable
+## v1.0.0 — Première version complète
 
-Objectif :
-Version complète du moteur.
+### Objectif
 
-- [ ] Équilibrage
-- [ ] Optimisation
-- [ ] Sauvegarde finale
-- [ ] Documentation complète
+Première version jouable et stable.
+
+* [ ] Équilibrage
+* [ ] Optimisations
+* [ ] Documentation complète
+* [ ] Version Release

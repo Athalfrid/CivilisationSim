@@ -8,35 +8,40 @@ Le projet suit un versionnement basé sur des jalons de développement.
 
 # v0.1.0 - Fondations du moteur
 
-## Ajouts
+## Ajout
 
 ### Simulation
 
-- Création de la classe City.
-- Création du système de ressources génériques.
-- Création du système de production.
-- Création du système de construction.
+* Création de la classe `City`.
+* Mise en place du système de ressources génériques.
+* Mise en place du système de production des bâtiments.
+* Mise en place du système de construction des bâtiments.
+* Gestion de la population.
+* Gestion du temps.
 
 ### Données
 
-- Ajout des ScriptableObjects BuildingData.
-- Ajout des ScriptableObjects ResourceData.
-- Ajout de ResourceDatabase.
-- Ajout de ProductionData.
-- Ajout de ResourceCost.
+* Création de `BuildingData`.
+* Création de `ResourceData`.
+* Création de `ResourceDatabase`.
+* Création de `ProductionData`.
+* Création de `ResourceCost`.
+* Création de `CityResource`.
 
 ### Interface
 
-- Création d'une interface dynamique affichant automatiquement toutes les ressources.
+* Création d'une interface utilisateur dynamique.
+* Affichage automatique des ressources disponibles.
+* Mise en place du nouveau système d'entrée (Input System).
 
 ### Projet
 
-- Initialisation du dépôt Git.
-- Création de la documentation.
-- Mise en place d'une architecture data-driven.
+* Initialisation du dépôt Git.
+* Création de la documentation du projet.
+* Mise en place d'une architecture data-driven.
 
 ---
 
 # v0.2.0
 
-En développement...
+🚧 En développement...

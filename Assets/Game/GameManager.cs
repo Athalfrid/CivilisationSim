@@ -3,6 +3,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [SerializeField]
     public City city;
 
     [SerializeField]
@@ -19,7 +20,6 @@ public class GameManager : MonoBehaviour
         city = new City("Ma première ville",resourceDatabase);
         time = new TimeManager();
 
-        Debug.Log("GameManager initialisé");    
     }
 
     // Update is called once per frame
@@ -31,19 +31,7 @@ public class GameManager : MonoBehaviour
         {
             city.Tick();
             time.Tick();
-
-            Debug.Log(
-                "Année : "
-                + time.Year
-                + "\tPopulation : "
-                + city.Population
-                +"/"
-                +city.GetHousingCapacity()
-                + "\tNourriture : "
-                
-            );
-
-            timer = 0f; // <-- il manquait ça
+            timer = 0f; 
         }
     }
 

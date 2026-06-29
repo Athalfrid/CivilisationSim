@@ -12,10 +12,7 @@ public class City
     public List<CityResource> Resources = new List<CityResource>();
     private ResourceDatabase resourceDatabase;
 
-    // public int Food;
-    // public int Wood;
-    // public int Stone;
-
+    
     public List<Building> Buildings = new List<Building>();
 
     public City(string name, ResourceDatabase resourceDatabase)
