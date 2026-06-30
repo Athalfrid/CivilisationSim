@@ -21,4 +21,7 @@ public class BuildingData : ScriptableObject
     [Header("Dimensions")]  
     public int Width = 1;
     public int Height = 1;
+
+    [Header("Prefab")]
+    public GameObject Prefab;
 }

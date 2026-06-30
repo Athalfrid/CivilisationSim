@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -22,6 +23,12 @@ public class InputManager : MonoBehaviour
     private BuildingData woodHouseData;
 
     [SerializeField]
+    private BuildingData selectedBuilding;
+
+    public BuildingData SelectedBuilding => selectedBuilding; //The name 'selectedBuilding' does not exist in the current contextCS0103
+
+
+    [SerializeField]
     private CitySave citySave;
 
 
@@ -38,22 +45,22 @@ public class InputManager : MonoBehaviour
 
         if (Keyboard.current.fKey.wasPressedThisFrame)
         {
-            Build(farmData);
+            selectedBuilding = farmData;
         }
 
         if (Keyboard.current.hKey.wasPressedThisFrame)
         {
-            Build(houseData);
+            selectedBuilding = houseData;
         }
 
         if (Keyboard.current.sKey.wasPressedThisFrame)
         {
-            Build(stoneMineData);
+            selectedBuilding = stoneMineData;
         }
 
         if (Keyboard.current.wKey.wasPressedThisFrame)
         {
-            Build(woodHouseData);
+            selectedBuilding = woodHouseData;
         }
 
         if (Keyboard.current.f9Key.wasPressedThisFrame)
@@ -66,22 +73,4 @@ public class InputManager : MonoBehaviour
             saveManager.Load();
         }
     }
-
-
-
-    void Build(BuildingData buildingData)
-    {
-
-        if (gameManager.city.Build(buildingData))
-        {
-            Debug.Log(buildingData.BuildingName + " construit !");
-        }
-        else
-        {
-            Debug.Log("Pas assez de ressources");
-        }
-    }
-
-
-
 }

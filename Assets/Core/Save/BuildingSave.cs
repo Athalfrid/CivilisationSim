@@ -5,4 +5,6 @@ using System;
 public class BuildingSave
 {
     public string BuildingId;
+    public int X;
+    public int Y;
 }

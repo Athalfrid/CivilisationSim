@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     private BuildingDatabase buildingDatabase;
     public BuildingDatabase BuildingDatabase => buildingDatabase;
     private TimeManager time;
+    WorldGenerationSettings worldGenerationSettings;
 
     private float timer = 0f;
 
@@ -21,8 +22,9 @@ public class GameManager : MonoBehaviour
     private float tickDuration = 4f;
     void Awake()
     {
-        world = new World(20, 20);
-        city = new City("Ma première ville", resourceDatabase);
+        worldGenerationSettings = new WorldGenerationSettings();
+        world = WorldGenerator.Generate(worldGenerationSettings);
+        city = new City("Ma première ville", resourceDatabase, world);
         time = new TimeManager();
 
     }
@@ -57,13 +59,15 @@ public class GameManager : MonoBehaviour
         save.Year = time.Year;
         save.World = world.CreateSave();
         save.LastSaveDate = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+        save.GenerationSettings = worldGenerationSettings;
         return save;
     }
 
     public void LoadGame(SaveGame save)
     {
-        city = City.FromSave(save.City, resourceDatabase, buildingDatabase);
+        worldGenerationSettings = save.GenerationSettings;
+        world = WorldGenerator.Generate(worldGenerationSettings);
+        city = City.FromSave(save.City, resourceDatabase, buildingDatabase, world);
         time.Load(save.Year);
-        world = World.FromSave(save.World);
     }
 }

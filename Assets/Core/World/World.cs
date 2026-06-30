@@ -12,13 +12,7 @@ public class World
         Height = height;
         Tiles = new Tile[Width, Height];
 
-        for (int y = 0; y < Height; y++)
-        {
-            for (int x = 0; x < Width; x++)
-            {
-                Tiles[x,y] = new Tile(x,y, TerrainType.Grass);
-            }
-        }
+
     }
 
     public Tile GetTile(int x, int y)
@@ -38,9 +32,4 @@ public class World
         return save;
     }
 
-    public static World FromSave(WorldSave save)
-    {
-        World world = new World(save.Width, save.Height);
-        return world;
-    }
 }

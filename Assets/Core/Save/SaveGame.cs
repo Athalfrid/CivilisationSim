@@ -8,4 +8,5 @@ public class SaveGame
     public WorldSave World;
     public int Year;
     public string LastSaveDate;
+    public WorldGenerationSettings GenerationSettings;
 }

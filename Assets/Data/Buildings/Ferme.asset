@@ -25,3 +25,6 @@ MonoBehaviour:
     Amount: 20
   - Resource: {fileID: 11400000, guid: 7476dc2867585364fa93fb3ec8224ee1, type: 2}
     Amount: 10
+  Width: 1
+  Height: 1
+  Prefab: {fileID: 3195331315538799601, guid: 310a4d76c0c0c5c4488d114a46e5b104, type: 3}

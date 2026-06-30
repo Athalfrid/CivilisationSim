@@ -18,52 +18,66 @@ Mettre en place les fondations techniques du projet.
 
 ### Simulation
 
-* [x] Gestion du temps
-* [x] Gestion de la ville
-* [x] Ressources génériques
-* [x] Productions génériques
-* [x] Construction générique
+- [x] Gestion du temps
+- [x] Gestion de la ville
+- [x] Ressources génériques
+- [x] Productions génériques
+- [x] Construction générique
 
 ### Architecture
 
-* [x] ScriptableObjects
-* [x] BuildingData
-* [x] ResourceData
-* [x] ResourceDatabase
-* [x] ProductionData
-* [x] ResourceCost
+- [x] ScriptableObjects
+- [x] BuildingData
+- [x] ResourceData
+- [x] ResourceDatabase
+- [x] BuildingDatabase
+- [x] ProductionData
+- [x] ResourceCost
 
 ### Interface
 
-* [x] Interface utilisateur dynamique
-* [x] Input System
+- [x] Interface utilisateur dynamique
+- [x] Input System
 
 ### Projet
 
-* [x] Dépôt Git
-* [x] Documentation initiale
+- [x] Dépôt Git
+- [x] Documentation initiale
 
 ---
 
-## v0.2.0 — Première simulation jouable
+## v0.2.0 — Première simulation jouable ✅
 
 ### Objectif
 
 Construire une première ville sur une carte.
 
+### Monde
+
+- [x] Génération procédurale
+- [x] Paramètres de génération
+- [x] Rendu de la carte
+
 ### Simulation
 
-* [ ] Architecture de sauvegarde
-* [ ] Implémantation de la sauvegarde
-* [ ] Chargement de la sauvegarde
-* [ ] Carte
-* [ ] Placement des bâtiments
+- [x] Architecture de sauvegarde
+- [x] Implémentation de la sauvegarde
+- [x] Chargement de la sauvegarde
+- [x] Placement des bâtiments
+- [x] Rendu des bâtiments
 
 ### Interface
 
-* [ ] Barre de construction
-* [ ] Sélection des bâtiments
-* [ ] Informations sur les bâtiments
+- [x] HUD
+- [x] BottomBar
+- [x] BuildButton Prefab
+- [x] BuildMenu
+- [x] Génération automatique des boutons
+- [ ] Sélection d'un bâtiment
+- [ ] Placement via l'interface
+- [ ] Icônes des bâtiments
+- [ ] Tooltip des bâtiments
+- [ ] Informations sur les bâtiments
 
 ---
 
@@ -75,15 +89,24 @@ Permettre à une ville de fonctionner sans intervention permanente du joueur.
 
 ### Population
 
-* [ ] Citoyens
-* [ ] Logements
-* [ ] Besoins
+- [ ] Citoyens
+- [ ] Logements
+- [ ] Besoins
+- [ ] Croissance démographique
+
+### Production
+
+- [ ] Zones de production
+- [ ] Conditions de placement
+- [ ] Fertilité
+- [ ] Gisements
+- [ ] Forêts exploitables
 
 ### Économie
 
-* [ ] Entrepôts
-* [ ] Routes
-* [ ] Transport des ressources
+- [ ] Entrepôts
+- [ ] Routes
+- [ ] Transport des ressources
 
 ---
 
@@ -93,10 +116,19 @@ Permettre à une ville de fonctionner sans intervention permanente du joueur.
 
 Créer une véritable chaîne de production.
 
-* [ ] Commerce
-* [ ] Marchés
-* [ ] Import / Export
-* [ ] Ressources avancées
+### Économie
+
+- [ ] Marchés
+- [ ] Commerce
+- [ ] Import / Export
+- [ ] Échanges entre villes
+
+### Ressources
+
+- [ ] Ressources transformées
+- [ ] Chaînes de production
+- [ ] Artisanat
+- [ ] Industrie
 
 ---
 
@@ -106,10 +138,12 @@ Créer une véritable chaîne de production.
 
 Faire évoluer la civilisation à travers les âges.
 
-* [ ] Technologies
-* [ ] Époques historiques
-* [ ] Recherche
-* [ ] Culture
+- [ ] Technologies
+- [ ] Arbre de recherche
+- [ ] Époques historiques
+- [ ] Culture
+- [ ] Bonheur
+- [ ] Religion
 
 ---
 
@@ -119,11 +153,13 @@ Faire évoluer la civilisation à travers les âges.
 
 Créer un environnement dynamique.
 
-* [ ] IA
-* [ ] Diplomatie
-* [ ] Armées
-* [ ] Catastrophes naturelles
-* [ ] Climat
+- [ ] IA des villes
+- [ ] Diplomatie
+- [ ] Commerce entre civilisations
+- [ ] Armées
+- [ ] Catastrophes naturelles
+- [ ] Climat
+- [ ] Événements aléatoires
 
 ---
 
@@ -133,7 +169,12 @@ Créer un environnement dynamique.
 
 Première version jouable et stable.
 
-* [ ] Équilibrage
-* [ ] Optimisations
-* [ ] Documentation complète
-* [ ] Version Release
+### Finalisation
+
+- [ ] Équilibrage
+- [ ] Optimisations
+- [ ] Effets visuels
+- [ ] Musiques & sons
+- [ ] Tutoriel
+- [ ] Documentation complète
+- [ ] Version Release

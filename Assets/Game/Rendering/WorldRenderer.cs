@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class WorldRenderer : MonoBehaviour
 {
@@ -19,19 +20,39 @@ public class WorldRenderer : MonoBehaviour
         {
             for (int x = 0; x < gameManager.world.Width; x++)
             {
-                GameObject tile = Instantiate(tilePrefab, transform);
-                Renderer renderer = tile.GetComponent<Renderer>();
+                GameObject tileObject = Instantiate(tilePrefab, transform);
+                TileView tileView = tileObject.GetComponent<TileView>();
+                Tile tileData = gameManager.world.GetTile(x, y);
 
-                if ((x + y) % 2 == 0)
-                {
-                    renderer.material.color = Color.green;
-                }
-                else
-                {
-                    renderer.material.color = Color.white;
-                }
-                tile.transform.position = new Vector3(x * 1.02f, 0, y * 1.02f);
+                tileView.Tile = tileData;
+                
+                tileObject.transform.position = new Vector3(x, 0, y);
+
+
+                Renderer renderer = tileObject.GetComponent<Renderer>();
+
+                renderer.material.color = GetTerrainColor(tileData.TerrainType);
             }
+        }
+    }
+
+    private Color GetTerrainColor(TerrainType terrainType)
+    {
+        switch (terrainType)
+        {
+            case TerrainType.Grass:
+                return Color.green;
+
+            case TerrainType.Forest:
+                return new Color(0f, 0.4f, 0f);
+
+            case TerrainType.Stone:
+                return Color.gray;
+
+            case TerrainType.Water:
+                return Color.blue;
+            default:
+                return Color.magenta;
         }
     }
 }

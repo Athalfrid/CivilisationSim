@@ -9,16 +9,18 @@ public class City
 
     public int Population;
 
+    private World world;
+
     public List<CityResource> Resources = new List<CityResource>();
     private ResourceDatabase resourceDatabase;
 
 
     public List<Building> Buildings = new List<Building>();
 
-    public City(string name, ResourceDatabase resourceDatabase)
+    public City(string name, ResourceDatabase resourceDatabase, World world)
     {
         this.resourceDatabase = resourceDatabase;
-
+        this.world = world;
         Name = name;
         Population = 10;
 
@@ -126,12 +128,15 @@ public class City
         return true;
     }
 
-    public bool Build(BuildingData buildingData)
+    public bool Build(BuildingData buildingData, Tile tile)
     {
         if (!CanBuild(buildingData))
         {
             return false;
         }
+        Building newBuilding = new Building(buildingData);
+        newBuilding.OriginTile = tile;
+        tile.Building = newBuilding;
         foreach (ResourceCost cost in buildingData.ConstructionCosts)
         {
             CityResource resource = GetResource(cost.Resource);
@@ -141,7 +146,7 @@ public class City
             }
         }
 
-        Buildings.Add(new Building(buildingData));
+        Buildings.Add(newBuilding);
 
         return true;
     }
@@ -164,17 +169,20 @@ public class City
         {
             BuildingSave buildingSave = new BuildingSave();
             buildingSave.BuildingId = building.Data.Id;
+            buildingSave.X = building.OriginTile.X;
+            buildingSave.Y = building.OriginTile.Y;
             save.Buildings.Add(buildingSave);
         }
         return save;
     }
 
-    public static City FromSave(CitySave save, ResourceDatabase resourceDatabase, BuildingDatabase buildingDatabase)
+    public static City FromSave(CitySave save, ResourceDatabase resourceDatabase, BuildingDatabase buildingDatabase,World world)
     {
         City city = new City();
         city.Name = save.Name;
         city.Population = save.Population;
         city.resourceDatabase = resourceDatabase;
+        city.world = world;
 
         foreach (CityResourceSave resourceSave in save.Resources)
         {
@@ -185,7 +193,10 @@ public class City
 
         foreach (BuildingSave buildingSave in save.Buildings)
         {
+            Tile tile = world.GetTile(buildingSave.X, buildingSave.Y);
             Building building = new Building(buildingDatabase.GetBuilding(buildingSave.BuildingId));
+            building.OriginTile = tile;
+            tile.Building = building;
             city.Buildings.Add(building);
         }
 
